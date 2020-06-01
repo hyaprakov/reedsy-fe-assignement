@@ -1,0 +1,282 @@
+// Import Bulma based responsive functions
+    
+@import './settings.sass'
+@import './responsive.sass'
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+html, body 
+    margin: 0
+    padding: 0
+    font-size: 62.5%
+    font-family: $family-primary
+    color: $text
+    background-color: $primary-light
+
+h1
+    font-size: $size-1
+    font-family: $family-secondary
+    font-weight: 400
+    line-height: 1.2
+    margin: 2rem 0 1rem 0
+
+    @include tablet 
+        font-size: 3.5rem
+
+h2
+    font-size: $size-2
+    font-family: $family-secondary
+    font-weight: 700
+    line-height: 1.2
+
+    @include tablet 
+        font-size: 3rem
+
+h3
+    font-size: $size-6
+    line-height: 1.2
+    font-family: $family-secondary
+    font-weight: 700
+
+    @include tablet 
+        font-size: 1.8rem
+
+p,
+ul
+    font-size: $size-6
+    margin: 1.25rem 0
+    font-weight: 400
+    line-height: 1.3
+a
+    font-size: $size-6
+    font-weight: 400
+    text-decoration: none
+    color: $text
+
+h1, h2, h3, h4, h5, p, label
+    a
+        color: inherit
+        font-size: inherit
+        font-weight: inherit
+        border-bottom: .1rem dashed $text
+        transition: all .3s
+
+        &:hover
+            color: inherit
+            border-bottom-style: solid
+
+.container
+    width: 134.4rem
+    margin: 0 auto
+
+    @include desktop
+        width: 96rem
+    @include tablet
+        width: 100%
+        padding: 0 1.5rem
+
+
+.top-actions .container
+    padding: 1rem 3rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    @include mobile
+        flex-direction: column
+
+.top-logo
+    padding: .8rem 8rem
+    border-radius: $radius
+    background-color: $grey
+    transition: background-color .3s
+
+    @include mobile
+        margin-bottom: 1rem
+
+    &:hover
+        background-color: $grey-dark
+
+.top-menu
+    ul
+        display: flex
+        margin: 0
+        padding: 0
+        list-style: none
+
+        @include mobile
+            align-items: center
+            flex-direction: column
+
+        li
+            display: block
+            padding: 0 .2rem
+
+            &.active a
+                color: $white
+                background-color: $primary
+
+                &:hover
+                    background-color: $primary-dark
+
+            a
+                display: block
+                padding: .8rem 1.5rem
+                border-radius: $radius
+                transition: all .3s
+
+                &:hover
+                    background-color: $grey-light
+                    
+
+.main 
+    padding: 0 1.5rem 3rem 1.5rem
+
+    .container
+        margin-top: 1.5rem
+        padding: 2rem 0 4rem 0
+        border-radius: $radius-big $radius-big 0 0
+        box-shadow: $shadow
+        background-color: $white
+
+        @include mobile
+            padding: 1.5rem 0
+
+    h1
+        margin: 1rem 3rem 2rem 3rem
+        
+        @include mobile
+            margin: 1rem 1.5rem 2rem 1.5rem
+
+img
+    display: block
+    border-radius: $radius-big
+    box-shadow: $shadow-light
+
+.featured-book
+    position: relative
+    display: flex
+    padding: 3rem
+    background-color: $primary-light
+
+    @include mobile
+        flex-direction: column
+        padding: 1.5rem
+
+    .recommended
+        position: absolute
+        top: 0
+        right: 0
+        padding: .5rem 1rem
+        font-size: $size-7
+        color: $white
+        border-radius: 0 0 0 $radius-big
+        background-color: $primary
+
+    img
+        width: 30%
+        align-self: flex-start
+
+        @include mobile
+            width: auto
+            height: 20rem
+            margin: 1rem auto
+
+.book-info
+    padding: .5rem 1.5rem
+
+    @include mobile
+        padding: 0.5rem 0
+
+    .author
+        font-size: $size-6
+        color: $grey-darker
+
+    .synopsis
+        p:last-child
+            margin-bottom: 0
+            
+.top-voted
+    padding: 3rem
+
+    @include mobile
+        padding: 1.5rem
+
+    h2
+        margin: 2rem 0
+
+.books-list
+    display: flex
+    margin: -1rem
+
+    @include mobile
+        flex-direction: column
+
+    .book
+        position: relative
+        flex: 1
+        margin: 1rem
+        border-radius: $radius-big
+        background-color: $primary-light
+
+        .position
+            width: 3rem
+            height: 3rem
+            position: absolute
+            top: .75rem
+            right: .75rem
+            padding: .5rem
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 100%
+            border: .2rem solid $primary
+            font-size: $size-6
+            line-height: .7
+            color: $primary
+
+        img
+            height: 20rem
+            margin: 1.5rem auto 0 auto
+
+        .book-info
+            padding: 1.5rem
+
+        .author,
+        .synopsis p
+            font-size: $size-7
+
+footer
+    position: fixed
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 100
+    background-color: $black
+
+    ul 
+        display: flex
+        justify-content: center
+        margin: 0
+        padding: 0
+        list-style: none
+
+        li
+            display: block
+
+            a
+                display: block
+                padding: 1rem 3rem
+                font-size: $size-7
+                color: $white
+                transition: background-color .3s
+
+                @include mobile
+                    padding: 1rem 2rem
+
+                &:hover
+                    background: rgba(255, 255, 255, .05)
+
